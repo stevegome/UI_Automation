@@ -1,0 +1,29 @@
+{
+  "ErrorMessages": {
+    "HMI_LoginFailed": "Incorrect email or password. Please try again.",
+    "PasswordRequiredError": "Password required. Please provide a password"
+  },
+  "ScreenTitles": {
+    "LoginScreenTitle": "Sign In",
+    "DashboardScreenTitle_Mobile": "Home"
+    
+  },
+  "Alerts": {
+    "ProfileUpdated_AlertText": "Your profile has been successfully updated",
+    "EmailRequiredText": "Email required.",
+    "InvalidEmailText": "Invalid Email format. Please provide a valid email address.",
+    "EmailAddressInvalid": "Please check this email and try again.",
+    "UserCreationAlert": "New user created",
+    "UserDeletedAlert": "User Deleted"
+
+  },
+  "Texts": {
+     "NewUser" : "New User"
+  },
+
+    "TileText": {
+
+    }
+  }
+
+

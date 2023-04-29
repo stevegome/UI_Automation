@@ -1,0 +1,21 @@
+{
+  "URL": {
+    "HMI_LoginURL": "http://localhost:7075/login-ui/"
+  },
+  "HMI": {
+    "UserName": "dev@gems.energy",
+    "Password": "changeme",
+    "InvalidPassword": "Test1234",
+    "EmptyUserName": "",
+    "InvalidUserName": "qa@gems.energy",
+    "Email": "test@testuser.com",
+    "FirstName": "User",
+    "LastName": "Test",
+    "PhoneNumber": "5555555555",
+    "NewPassword": "user123",
+    "GroupName": "QA Test Group",
+    "RoleName": "QA Test Role",
+    "RoleDescription": "Built-in QA Role",
+    "ApplicationName": "QA App Key"
+  }
+}

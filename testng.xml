@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="GEMS HMI Test Suite" verbose="1">
+    <listeners>
+        <listener class-name="Reporting.TestListener"/>
+        <listener class-name="Utilities.PriorityInterceptor"/>
+        <listener class-name="Reporting.AnnotationTransformer"/>
+    </listeners>
+    <test name="GEMS Automation">
+        <parameter name="groups" value="HMI"/>
+        <groups>
+            <run>
+                <include name="HMI"/>
+            </run>
+        </groups>
+
+        <classes>
+            <class name="Tests.Web.Regression.TestLogin"/>
+            <class name="Tests.Web.Regression.TestUserManagement"/>
+        </classes>
+
+    </test>
+</suite>
+
+
