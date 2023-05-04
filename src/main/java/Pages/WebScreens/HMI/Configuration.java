@@ -148,7 +148,7 @@ public class Configuration extends TestSetup {
 
     public void clickNewlyCreatedUser() throws IOException {
         waitTillElementIsDisplayed(Users, 20);
-        for (int i = 1; i <= nameRows.size(); i++) {
+        for (int i=1;i<=nameRows.size();i++) {
             if (webDriver.findElement(By.xpath("//div[@class='table-body']/a[" + i + "]/div[2]")).getText()
                     .equalsIgnoreCase(getValueFromJson("HMI.Email"))) {
                 clickOnElement(webDriver.findElement(By.xpath("//div[@class='table-body']/a[" + i + "]/div[2]")),
