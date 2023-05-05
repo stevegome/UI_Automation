@@ -7,10 +7,10 @@
         <listener class-name="Reporting.AnnotationTransformer"/>
     </listeners>
     <test name="GEMS Automation">
-        <parameter name="groups" value="HMI1"/>
+        <parameter name="groups" value="HMI"/>
         <groups>
             <run>
-                <include name="HMI1"/>
+                <include name="HMI"/>
             </run>
         </groups>
 
