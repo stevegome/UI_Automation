@@ -20,7 +20,6 @@ public class CalendarUtils {
         LocalDateTime now = LocalDateTime.now();
         String currentDate = dtf.format(now);
         String dateBefore7days = dtf.format(now.minusDays(6));
-
         return dateBefore7days + " - " + currentDate;
     }
 
