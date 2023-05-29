@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.Gems</groupId>
-    <artifactId>GemsAutomation</artifactId>
+    <artifactId>UIAutomation</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <name>WartsilaAutomationFramework</name>
