@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="GEMS HMI Test Suite" verbose="1">
+<suite name="UI Automation Test Suite" verbose="1">
     <listeners>
         <listener class-name="Reporting.TestListener"/>
         <listener class-name="Utilities.PriorityInterceptor"/>
         <listener class-name="Reporting.AnnotationTransformer"/>
     </listeners>
-    <test name="GEMS Automation">
+    <test name="UI Automation">
         <parameter name="groups" value="HMI"/>
         <groups>
             <run>
