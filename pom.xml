@@ -6,7 +6,7 @@
     <artifactId>UIAutomation</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    <name>WartsilaAutomationFramework</name>
+    <name>UIAutomationFramework</name>
 
     <properties>
         <!--Dependencies Versions-->
