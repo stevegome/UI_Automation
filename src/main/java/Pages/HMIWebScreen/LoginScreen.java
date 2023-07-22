@@ -1,23 +1,27 @@
-package Pages.WebScreens.HMI;
+package Pages.HMIWebScreen;
 
 import Setup.TestSetup;
+import Utilities.ApiCommonMethods;
+import Utilities.Log;
+import com.relevantcodes.extentreports.LogStatus;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import java.io.IOException;
 
+import static Reporting.ExtentManager.getTest;
 import static Utilities.TestUtils.*;
 
 
-public class Login extends TestSetup {
+public class LoginScreen extends TestSetup {
 
     @FindBy(xpath = "//button[@type='submit']")
     public WebElement loginButton;
 
-    @FindBy(id = "email")
+    @FindBy(xpath = "//input[@id='email']")
     public WebElement emailAddressTextBox;
 
-    @FindBy(id = "password")
+    @FindBy(xpath = "//input[@id='password']")
     public WebElement passwordTextBox;
 
     @FindBy(xpath = "//div[@class='bottom-spacing text-danger']")
@@ -47,7 +51,7 @@ public class Login extends TestSetup {
     @FindBy(xpath = "//a[contains(text(),'Back to Login')]")
     public WebElement backToLoginLink;
 
-    @FindBy(xpath = "  //*[@id='footer-wrapper']//p")
+    @FindBy(xpath = "//*[@id='footer-wrapper']//p")
     public WebElement disclaimerText;
 
     @FindBy(xpath = "checkbox")
@@ -65,10 +69,15 @@ public class Login extends TestSetup {
         clickOnElement(loginButton, "login button");
     }
 
-    public void login(String email, String password) {
+    public void userLogin(String email, String password) {
         enterEmail(email);
         enterPassword(password);
         clickSubmitButton();
+        String alarmDescription = ApiCommonMethods.getDescriptionOfFirstAlarm();
+        Log.info("Alarm description is : " + alarmDescription);
+        getTest().log(LogStatus.PASS,
+                "Alarm description is : "+ alarmDescription,
+                getTest().addBase64ScreenShot(captureScreenshot()));
     }
 
     public boolean isLoginScreen() throws IOException {
@@ -93,7 +102,4 @@ public class Login extends TestSetup {
         clickOnElement(privacyStatementLink, "Privacy Statement link");
     }
 
-    public void verifyDisclaimerOnCGLoginScreen() throws IOException {
-        textVerification(disclaimerText, getMessagesFromJson("Texts.DisclaimerTextOnCGLoginScreen"));
-    }
 }

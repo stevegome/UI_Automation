@@ -1,4 +1,4 @@
-package Pages.WebScreens.HMI;
+package Pages.HMIWebScreen;
 
 import Setup.TestSetup;
 import Utilities.Log;
@@ -9,10 +9,10 @@ import org.openqa.selenium.support.FindBy;
 import static Reporting.ExtentManager.getTest;
 import static Utilities.TestUtils.*;
 
-public class Dashboard extends TestSetup {
+public class DashboardScreen extends TestSetup {
 
     @FindBy(xpath = "//*[text()='dashboard']")
-    public WebElement dashboard;
+    public WebElement hmiDashboard;
 
     @FindBy(xpath = "//*[text()='Configuration']")
     public WebElement configuration;
@@ -29,17 +29,16 @@ public class Dashboard extends TestSetup {
     @FindBy(xpath = "//span[normalize-space()='Global Developer']")
     public WebElement globalDeveloper;
 
-
-    @FindBy(className = "all-patients-title col-xs-12 col-sm-3 ng-binding")
+    @FindBy(className ="all-patients-titlecol-xs-12col-sm-3ng-binding")
     public WebElement dashboardTitle;
 
-    @FindBy(id = "btn-menu-account-profile")
+    @FindBy(id ="btn-menu-account-profile")
     public WebElement settingButton;
 
-    @FindBy(xpath = "//span[contains(text(),'Profile')]")
+    @FindBy(xpath ="//span[contains(text(),'Profile')]")
     public WebElement profileTab;
 
-    @FindBy(xpath = "//span[contains(text(),'Notifications')]")
+    @FindBy(xpath ="//span[contains(text(),'Notifications')]")
     public WebElement notificationTab;
 
     public void logOut() throws InterruptedException {
@@ -49,7 +48,7 @@ public class Dashboard extends TestSetup {
     }
 
     public void clickDashboard() {
-        clickOnElement(dashboard, "Dashboard");
+        clickOnElement(hmiDashboard, "Dashboard");
     }
 
     public void clickConfiguration() {
@@ -93,6 +92,6 @@ public class Dashboard extends TestSetup {
     }
 
     public void verifyUserIsOnDashboardScreen() {
-        elementIsDisplayed(dashboard, "Dashboard");
+        elementIsDisplayed(hmiDashboard, "Dashboard");
     }
 }

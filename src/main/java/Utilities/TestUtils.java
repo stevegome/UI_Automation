@@ -35,10 +35,10 @@ import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
 
 import static Reporting.ExtentManager.getTest;
-import static Setup.TestSetup.browser;
-import static Setup.TestSetup.webDriver;
+//import static Setup.TestSetup.browser;
+//import static Setup.TestSetup.webDriver;
 
-public class TestUtils {
+public class TestUtils extends TestSetup{
 
     /**
      * To validate element is displayed on the screen
@@ -356,14 +356,14 @@ public class TestUtils {
      * @param timeout
      * @return
      */
-    /*public static FluentWait<? extends AppiumDriver<?>> waitForElement(int timeout) {
-        FluentWait<? extends AppiumDriver<?>> wait =
-                new FluentWait<>(mobileDriver).withTimeout(Duration.ofSeconds(timeout)).pollingEvery(Duration.ofSeconds(3)).ignoring(NoSuchElementException.class);
-        return wait;
-    }*/
+//    public static FluentWait<? extends AppiumDriver<?>> waitForElement(int timeout) {
+//        FluentWait<? extends AppiumDriver<?>> wait =
+//                new FluentWait<>(mobileDriver).withTimeout(Duration.ofSeconds(timeout)).pollingEvery(Duration.ofSeconds(3)).ignoring(NoSuchElementException.class);
+//        return wait;
+//    }
 
     /**
-     * Wait for absenece
+     * Wait for absence
      *
      * @param element
      * @param timeout
@@ -374,7 +374,7 @@ public class TestUtils {
                 FluentWait<? extends WebDriver> wait =
                         new FluentWait<>(webDriver).withTimeout(Duration.ofSeconds(timeout))
                                 .pollingEvery(Duration.ofSeconds(3));
-                wait.until((Function<WebDriver, Boolean>) driver -> !element.isDisplayed());
+                wait.until((Function<WebDriver, Boolean>) webDriver -> !element.isDisplayed());
             }
         } catch (Exception ignored) {
         }
@@ -475,7 +475,7 @@ public class TestUtils {
      */
     public static void waitTillElementIsDisplayed(WebElement element, int time) {
         if (webDriver != null) {
-            WebDriverWait wait = new WebDriverWait(webDriver, time);
+            WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(time));
             wait.until(ExpectedConditions.visibilityOf(element));
         }
     }
@@ -488,7 +488,7 @@ public class TestUtils {
      */
     public static void waitTillElementIsClickable(WebElement element, int time) {
         if (webDriver != null) {
-            WebDriverWait wait = new WebDriverWait(webDriver, time);
+            WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(time));
             wait.until(ExpectedConditions.elementToBeClickable(element));
         }
     }
@@ -500,7 +500,7 @@ public class TestUtils {
      */
     public static void waitTillPageToBeLoaded(int time) {
         if (webDriver != null) {
-            WebDriverWait wait = new WebDriverWait(webDriver, time);
+            WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(time));
             wait.until(driver -> ((JavascriptExecutor) webDriver).executeScript("return document.readyState")
                     .equals("complete"));
         }
