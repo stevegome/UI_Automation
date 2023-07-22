@@ -19,10 +19,10 @@ public class TestUserManagement extends TestSetup {
         }
     }
 
-    @Test(description = "[User Management] : Create and Delete User",groups = {"UserManagement","HMI"})
+    @Test(description = "[User Management] : Create and Delete User",groups = {"UserManagement","HMI","HMI_regression","HMI_regression"})
     public void createAndDeleteUser() throws IOException, InterruptedException {
-        login.login(getValueFromJson("HMI.UserName"), getValueFromJson("HMI.Password"));
-        elementIsDisplayed(dashboard.dashboard, "Dashboard Button");
+        login.userLogin(getValueFromJson("HMI.UserName"), getValueFromJson("HMI.Password"));
+        elementIsDisplayed(dashboard.hmiDashboard, "Dashboard Button");
         dashboard.clickConfiguration();
         configuration.clickLocalAccountManagement();
         configuration.verifyContentsUnderUsers();

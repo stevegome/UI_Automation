@@ -31,7 +31,7 @@ public class Example {
         List<WebElement> noOfColumns = driver.findElements(By.xpath("//*[@id=\"customers\"]/tbody/tr[2]/td"));
 
         boolean element_found = false;
-        String search_text = "kanda";
+        String search_text = "Mexico";
 
         for (int i = 2; i <= noOfRows.size(); i++) {
             for (int j = 1; j <= noOfColumns.size(); j++) {

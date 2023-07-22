@@ -29,21 +29,24 @@ public class HandleMultipleWindows {
 
         // To handle all new opened window.
         Set<String> s1 = driver.getWindowHandles();
+        System.out.println("Print all the window handles : " + s1);
         Log.info("Print all the window handles : " + s1);
         Iterator<String> i1 = s1.iterator();
 
-        while (i1.hasNext()) {
+        while(i1.hasNext()) {
+        //for(String ChildWindow : s1 ){
             String ChildWindow = i1.next();
 
-            if (!MainWindow.equalsIgnoreCase(ChildWindow)) {
-
+           if (!MainWindow.equalsIgnoreCase(ChildWindow)) {
+              //if(ChildWindow.equalsIgnoreCase(MainWindow)){
                 // Switching to Child window
                 driver.switchTo().window(ChildWindow);
-                driver.findElement(By.name("emailid")).sendKeys("gaurav.3n@gmail.com");
+                driver.findElement(By.name("emailid")).sendKeys("stevegomester@gmail.com");
                 driver.findElement(By.name("btnLogin")).click();
 
                 // Closing the Child Window.
                 driver.close();
+                Thread.sleep(3000);
             }
         }
         // Switching to Parent window i.e Main Window.

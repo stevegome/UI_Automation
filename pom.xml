@@ -1,25 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
     <groupId>org.Gems</groupId>
     <artifactId>UIAutomation</artifactId>
     <version>1.0-SNAPSHOT</version>
-
     <name>UIAutomationFramework</name>
 
     <properties>
         <!--Dependencies Versions-->
-        <selenium-supportVersion>3.141.59</selenium-supportVersion>
-        <selenium-chromeDriverVersion>3.141.59</selenium-chromeDriverVersion>
-        <selenium-firefoxDriverVersion>3.141.59</selenium-firefoxDriverVersion>
-        <selenium-edgeDriverVersion>3.141.59</selenium-edgeDriverVersion>
-        <javassistVersion>3.12.1.GA</javassistVersion>
-        <java-clientVersion>7.5.1</java-clientVersion>
-        <testngVersion>6.14.3</testngVersion>
+        <selenium-supportVersion>4.9.1</selenium-supportVersion>
+        <selenium-chromeDriverVersion>4.9.1</selenium-chromeDriverVersion>
+        <selenium-firefoxDriverVersion>4.9.1</selenium-firefoxDriverVersion>
+        <selenium-edgeDriverVersion>4.9.1</selenium-edgeDriverVersion>
+        <javassistVersion>3.29.2-GA</javassistVersion>
+        <java-clientVersion>4.9.1</java-clientVersion>
+        <testngVersion>7.5.1</testngVersion>
         <log4jVersion>1.7.13</log4jVersion>
-        <restAssuredVersion>3.2.0</restAssuredVersion>
-        <restJsonPathVersion>3.2.0</restJsonPathVersion>
+        <restAssuredVersion>5.3.0</restAssuredVersion>
         <comJayWayVersion>2.2.0</comJayWayVersion>
         <compiler-pluginVersion>3.8.0</compiler-pluginVersion>
         <surefire-pluginVersion>2.22.2</surefire-pluginVersion>
@@ -39,9 +36,14 @@
             <artifactId>selenium-support</artifactId>
             <version>${selenium-supportVersion}</version>
         </dependency>
-
+        <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
         <dependency>
-            <groupId>javassist</groupId>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.8.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.javassist</groupId>
             <artifactId>javassist</artifactId>
             <version>${javassistVersion}</version>
         </dependency>
@@ -51,8 +53,8 @@
             <version>1.0.1</version>
         </dependency>
         <dependency>
-            <groupId>io.appium</groupId>
-            <artifactId>java-client</artifactId>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
             <version>${java-clientVersion}</version>
         </dependency>
 
@@ -89,7 +91,12 @@
         <dependency>
             <groupId>io.rest-assured</groupId>
             <artifactId>json-path</artifactId>
-            <version>${restJsonPathVersion}</version>
+            <version>${restAssuredVersion}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>xml-path</artifactId>
+            <version>${restAssuredVersion}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>
@@ -97,10 +104,16 @@
             <version>${commonLangVersion}</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.12.0</version>
+        </dependency>
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
-            <version>4.1.0</version>
+            <version>5.3.2</version>
         </dependency>
 
         <dependency>
@@ -120,6 +133,7 @@
             <artifactId>selenium-edge-driver</artifactId>
             <version>${selenium-edgeDriverVersion}</version>
         </dependency>
+
 
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>

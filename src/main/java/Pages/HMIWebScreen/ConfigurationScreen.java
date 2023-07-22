@@ -1,16 +1,17 @@
-package Pages.WebScreens.HMI;
+package Pages.HMIWebScreen;
 
 import Setup.TestSetup;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+
 import java.io.IOException;
 import java.util.List;
 
 import static Utilities.TestUtils.*;
 
-public class Configuration extends TestSetup {
+public class ConfigurationScreen extends TestSetup {
 
     @FindBy(xpath = "//*[text()='Local Account Management']")
     public WebElement localAccountManagement;
@@ -30,7 +31,7 @@ public class Configuration extends TestSetup {
     @FindBy(xpath = "//span[normalize-space()='Global Developer']")
     public WebElement globalDeveloper;
 
-    @FindBy(className = "all-patients-title col-xs-12 col-sm-3 ng-binding")
+    @FindBy(className = "all-patients-titlecol-xs-12col-sm-3ng-binding")
     public WebElement dashboardTitle;
 
     @FindBy(id = "btn-menu-account-profile")
@@ -52,21 +53,27 @@ public class Configuration extends TestSetup {
     public WebElement Email;
 
     @FindBy(xpath = "//*[contains(text(), 'Group')]")
+
     public WebElement Group;
 
     @FindBy(xpath = "//*[contains(text(), 'Last Login')]")
+
     public WebElement LastLogin;
 
     @FindBy(xpath = "//span[normalize-space()='Add User']")
+
     public WebElement addUser;
 
     @FindBy(xpath = "//h2[text()='New User'] ")
+
     public WebElement NewUser;
 
     @FindBy(id = "email")
+
     public WebElement email_input;
 
     @FindBy(id = "firstName")
+
     public WebElement firstName_input;
 
     @FindBy(id = "lastName")
@@ -145,6 +152,8 @@ public class Configuration extends TestSetup {
         isElementSelected(site_timezone, "SiteTimezone", true);
 
     }
+
+
 
     public void clickNewlyCreatedUser() throws IOException {
         waitTillElementIsDisplayed(Users, 20);

@@ -61,7 +61,7 @@ public class TestSetup {
 
     public static String getPlatformVersion() {
         Capabilities browserCaps = ((RemoteWebDriver) webDriver).getCapabilities();
-        return browserCaps.getVersion();
+        return browserCaps.getBrowserVersion();
     }
 
     public static String getEnvironment() throws Exception {

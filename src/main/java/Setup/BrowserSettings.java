@@ -61,7 +61,6 @@ public class BrowserSettings {
         } else if (getRunMode().equalsIgnoreCase("local")) {
             WebDriverManager.chromedriver().setup();
             ChromeOptions browserOptions = new ChromeOptions();
-            browserOptions.setHeadless(false);
             LoggingPreferences logPrefs = new LoggingPreferences();
             logPrefs.enable(LogType.PERFORMANCE, Level.ALL);
             browserOptions.setCapability("goog:loggingPrefs", logPrefs);
