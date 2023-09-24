@@ -7,16 +7,15 @@
         <listener class-name="Reporting.AnnotationTransformer"/>
     </listeners>
     <test name="UI Automation">
-        <parameter name="groups" value="HMI_regression"/>
+        <parameter name="groups" value="SauceLab"/>
         <groups>
             <run>
-                <include name="HMI_regression"/>
+                <include name="SauceLab"/>
             </run>
         </groups>
 
         <classes>
             <class name="Tests.Web.Regression.TestLoginScreen"/>
-            <class name="Tests.Web.Regression.TestUserManagement"/>
         </classes>
 
     </test>

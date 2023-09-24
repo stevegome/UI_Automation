@@ -20,7 +20,7 @@ public class ExtentManager {
     public synchronized static ExtentReports getReporter() {
         String timeStamp = new SimpleDateFormat("yyyy-MM-dd HH-mm-ss").format(new Date());
         if (extent == null) {
-            extent = new ExtentReports(System.getProperty("user.dir") + "/Reports/" + "GEMS_" + System.getProperty("platform")+"_HMI_Automation_"+System.getProperty("browser")+"_browser_"+ timeStamp + ".html");
+            extent = new ExtentReports(System.getProperty("user.dir") + "/Reports/" + System.getProperty("platform")+"_Test_Automation_"+System.getProperty("browser")+"_browser_"+ timeStamp + ".html");
         }
         return extent;
     }

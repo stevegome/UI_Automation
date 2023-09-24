@@ -1,9 +1,8 @@
 package Interfaces;
 
 
-import Pages.HMIWebScreen.LoginScreen;
 import Pages.HMIWebScreen.DashboardScreen;
-import Pages.HMIWebScreen.ConfigurationScreen;
+import Pages.HMIWebScreen.LoginScreen;
 
 
 public interface ClassObjects {
@@ -12,7 +11,5 @@ public interface ClassObjects {
     //HMI WEB SCREENS
     LoginScreen login = new LoginScreen();
     DashboardScreen dashboard = new DashboardScreen();
-    ConfigurationScreen configuration = new ConfigurationScreen();
-
 
 }

@@ -3,15 +3,7 @@ package Utilities;
 import Reporting.ExtentManager;
 import Setup.TestSetup;
 import com.relevantcodes.extentreports.LogStatus;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.TimeoutException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.html5.WebStorage;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -20,7 +12,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import javax.imageio.ImageIO;
-import java.awt.Color;
+import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -35,8 +27,6 @@ import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
 
 import static Reporting.ExtentManager.getTest;
-//import static Setup.TestSetup.browser;
-//import static Setup.TestSetup.webDriver;
 
 public class TestUtils extends TestSetup{
 
@@ -356,11 +346,11 @@ public class TestUtils extends TestSetup{
      * @param timeout
      * @return
      */
-//    public static FluentWait<? extends AppiumDriver<?>> waitForElement(int timeout) {
-//        FluentWait<? extends AppiumDriver<?>> wait =
-//                new FluentWait<>(mobileDriver).withTimeout(Duration.ofSeconds(timeout)).pollingEvery(Duration.ofSeconds(3)).ignoring(NoSuchElementException.class);
-//        return wait;
-//    }
+    public static FluentWait<? extends WebDriver> fluentWait(int timeout) {
+        FluentWait<? extends WebDriver> wait =
+                new FluentWait<>(webDriver).withTimeout(Duration.ofSeconds(timeout)).pollingEvery(Duration.ofSeconds(3)).ignoring(NoSuchElementException.class);
+        return wait;
+    }
 
     /**
      * Wait for absence

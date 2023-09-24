@@ -11,62 +11,20 @@ import static Utilities.TestUtils.*;
 
 public class DashboardScreen extends TestSetup {
 
-    @FindBy(xpath = "//*[text()='dashboard']")
-    public WebElement hmiDashboard;
 
-    @FindBy(xpath = "//*[text()='Configuration']")
-    public WebElement configuration;
+    @FindBy(xpath = "//*[text()='Swag Labs']")
+    public WebElement userDashboard;
 
-    @FindBy(xpath = "//*[text()='reports']")
-    public WebElement report;
+    @FindBy(xpath = "//*[@class='bm-burger-button']")
+    public WebElement hamburgerMenuButton;
 
-    @FindBy(xpath = "//*[text()='SLD']")
-    public WebElement sld;
-
-    @FindBy(xpath = "//*[text()='Log Out']")
+    @FindBy(xpath = "//*[text()='Logout']")
     public WebElement logOutButton;
-
-    @FindBy(xpath = "//span[normalize-space()='Global Developer']")
-    public WebElement globalDeveloper;
-
-    @FindBy(className ="all-patients-titlecol-xs-12col-sm-3ng-binding")
-    public WebElement dashboardTitle;
-
-    @FindBy(id ="btn-menu-account-profile")
-    public WebElement settingButton;
-
-    @FindBy(xpath ="//span[contains(text(),'Profile')]")
-    public WebElement profileTab;
-
-    @FindBy(xpath ="//span[contains(text(),'Notifications')]")
-    public WebElement notificationTab;
-
-    public void logOut() throws InterruptedException {
-        clickOnElement(logOutButton, "log  out button");
-        Thread.sleep(5000);
-        webDriver.navigate().refresh();
-    }
-
-    public void clickDashboard() {
-        clickOnElement(hmiDashboard, "Dashboard");
-    }
-
-    public void clickConfiguration() {
-        clickOnElement(configuration, "Configuration");
-    }
-
-    public void clickReports() {
-        clickOnElement(report, "Reports");
-    }
-
-    public void clickSld() {
-        clickOnElement(sld, "SLD");
-    }
 
 
     public void clickLogout() {
-        if (isElementPresent(globalDeveloper, 10)) {
-            clickOnElement(globalDeveloper, "Global Developer");
+        if (isElementPresent(hamburgerMenuButton, 10)) {
+            clickHamburgerMenu();
             clickOnElement(logOutButton, "Logout");
         } else {
             Log.info("Unable to logout");
@@ -76,22 +34,14 @@ public class DashboardScreen extends TestSetup {
     }
 
 
-    public void settingClick() {
-        waitTillElementIsDisplayed(settingButton, 10);
-        clickOnElement(settingButton, "setting button");
+    public void clickHamburgerMenu() {
+        waitTillElementIsDisplayed(hamburgerMenuButton, 10);
+        clickOnElement(hamburgerMenuButton, "setting button");
     }
 
-    public void navigateToProfileTab() {
-        waitTillElementIsDisplayed(profileTab, 10);
-        clickOnElement(profileTab, "profile button");
-    }
 
-    public void navigateToNotificationTab() {
-        waitTillElementIsDisplayed(profileTab, 10);
-        clickOnElement(notificationTab, "Notifications button");
-    }
-
-    public void verifyUserIsOnDashboardScreen() {
-        elementIsDisplayed(hmiDashboard, "Dashboard");
+    public void dashboardScreenTitleDisplayed() {
+        waitTillElementIsDisplayed(userDashboard,20);
+        elementIsDisplayed(userDashboard, "Sauce Lab Title");
     }
 }
