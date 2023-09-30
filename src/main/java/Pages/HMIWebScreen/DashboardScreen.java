@@ -12,8 +12,8 @@ import static Utilities.TestUtils.*;
 public class DashboardScreen extends TestSetup {
 
 
-    @FindBy(xpath = "//*[text()='Swag Labs']")
-    public WebElement userDashboard;
+    @FindBy(xpath = "//*[contains(text(),'Products')]")
+    public WebElement productDashboard;
 
     @FindBy(xpath = "//*[@class='bm-burger-button']")
     public WebElement hamburgerMenuButton;
@@ -41,7 +41,7 @@ public class DashboardScreen extends TestSetup {
 
 
     public void dashboardScreenTitleDisplayed() {
-        waitTillElementIsDisplayed(userDashboard,20);
-        elementIsDisplayed(userDashboard, "Sauce Lab Title");
+        waitTillElementIsDisplayed(productDashboard, 20);
+        elementIsDisplayed(productDashboard, "Sauce Lab Title");
     }
 }

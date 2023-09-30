@@ -8,7 +8,7 @@ import Pages.HMIWebScreen.LoginScreen;
 public interface ClassObjects {
 
 
-    //HMI WEB SCREENS
+    //SauceDemo WEB SCREENS
     LoginScreen login = new LoginScreen();
     DashboardScreen dashboard = new DashboardScreen();
 

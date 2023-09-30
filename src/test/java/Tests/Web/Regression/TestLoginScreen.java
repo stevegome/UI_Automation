@@ -22,9 +22,9 @@ public class TestLoginScreen extends TestSetup {
     }
 
     @Test(description = "[Login] : Verify user is able to logout successfully from SauceLab", groups = {"SauceLab"})
-    public void verifyInvalidLogin() throws IOException {
+    public void verifyLogin() throws IOException {
         login.userLogin(getValueFromJson("SauceLab.UserName"), getValueFromJson("SauceLab.Password"));
-        //dashboard.dashboardScreenTitleDisplayed();
+        dashboard.dashboardScreenTitleDisplayed();
         dashboard.clickLogout();
     }
 

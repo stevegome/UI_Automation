@@ -22,9 +22,6 @@ public class LoginScreen extends TestSetup {
     public WebElement loginButton;
 
 
-
-
-
     public void enterUsername(String username) throws IOException {
         enterText(input_username, username, "Username");
     }

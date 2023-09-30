@@ -3,7 +3,7 @@
 <suite name="UI Automation Test Suite" verbose="1">
     <listeners>
         <listener class-name="Reporting.TestListener"/>
-        <listener class-name="Utilities.PriorityInterceptor"/>
+<!--        <listener class-name="Utilities.PriorityInterceptor"/>-->
         <listener class-name="Reporting.AnnotationTransformer"/>
     </listeners>
     <test name="UI Automation">
